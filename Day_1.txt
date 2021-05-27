@@ -1,0 +1,299 @@
+using System;
+namespace Day_1
+{
+public class Program
+{
+	public static void Main()
+	{
+		int x=5;
+		int y=6;
+		Console.WriteLine(x+y);
+		Console.ReadLine();
+	}
+}
+}
+
+Output: 11
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+namespace Day_1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int Age;
+            Console.WriteLine("Enter Age");
+            Age = Convert.ToInt32(Console.ReadLine());
+            if (Age>60)
+            {
+                Console.WriteLine("Senior Citizen");
+            }
+            else if(Age<=60 && Age>=18)
+            {
+                Console.WriteLine("You are eligible for voting");
+            }
+            else
+            {
+                Console.WriteLine("You are not eligible for voting");
+            }
+            Console.ReadLine();
+        }
+    }
+}
+
+Output:
+Enter Age:60      Eligible for voting
+Enter Age:65      Senior Citizen
+Enter Age:12      Not eligible for voting
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+using System;
+
+namespace Day_1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int a, b, c;
+            Console.WriteLine("Enter value of a");
+            a = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter value of b");
+            b = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter value of c");
+            c = Convert.ToInt32(Console.ReadLine());
+            if(a>b && a>c)
+            {
+                Console.WriteLine(a + " is greater");
+            }
+            else if(b>a && b>c)
+            {
+                Console.WriteLine(b + " is greater");
+            }
+            else
+            {
+                Console.WriteLine(c + " is greater");
+            }
+            Console.ReadLine();
+        }
+    }
+}
+
+
+Output:
+Enter value of a:30
+Enter value of a:60
+Enter value of a:25
+60 is greater
+------------------------------------------------------------------------------------------------------------------------------
+
+using System;
+
+namespace Day_1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n;
+            Console.WriteLine("Enter any number from 1 to 5");
+            n=Convert.ToInt32(Console.ReadLine());
+            if(n==1)
+            {
+                Console.WriteLine("One");
+            }
+             else if (n==2)
+            {
+                Console.WriteLine("Two");
+            }
+            else if (n==3)
+            {
+                Console.WriteLine("Three");
+            }
+            else if (n==4)
+            {
+                Console.WriteLine("Four");
+            }
+            else if (n ==5)
+            {
+                Console.WriteLine("Five");
+            }
+            else
+            {
+                Console.WriteLine("Enter number between 1 to 5");
+            }
+            Console.ReadLine();
+        }
+    }
+}
+
+Output:
+Enter any number from 1 to 5
+4
+Four
+
+Enter any number from 1 to 5
+9
+Enter any number from 1 to 5
+
+------------------------------------------------------------------------------------------------------------------------------
+
+using System;
+
+namespace Day_1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int Number;
+            Console.WriteLine("Enter any number from 1 to 5");
+            Number=Convert.ToInt32(Console.ReadLine());
+
+            switch (Number)
+            {
+                case 1:
+                    Console.WriteLine("One");
+                    break;
+                case 2:
+                    Console.WriteLine("Two");
+                    break;
+                case 3:
+                    Console.WriteLine("Three");
+                    break;
+                case 4:
+                    Console.WriteLine("Four");
+                    break;
+                case 5:
+                    Console.WriteLine("Five");
+                    break;
+                default:
+                    Console.WriteLine("Please enter number between 1 to 5");
+                    break;
+            }
+            Console.ReadLine();
+        }
+    }
+}
+
+Output:
+Enter any number from 1 to 5
+4
+Four
+
+Enter any number from 1 to 5
+9
+Please enter number from 1 to 5
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+using System;
+
+namespace Day_1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+         for(int i=1;i<=5;i++)
+            {
+                for (int j = 1; j <= i; j++)
+                {
+                    Console.Write(" * ");
+                }
+                Console.WriteLine("\n");
+            }
+            Console.ReadLine();
+        }
+    }
+}
+
+
+Output:
+*
+* *
+* * *
+* * * *
+* * * * *
+
+------------------------------------------------------------------------------------------------------------------------------
+
+using System;
+                   
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        int[] a = new int[10];
+        for (int i = 0; i < a.Length; i++)
+        {
+            Console.WriteLine("enter value: ");
+            a[i] = Convert.ToInt32(Console.ReadLine());
+        }
+        foreach (var item in a)
+        {
+            if (item % 2 == 0)
+            {
+                Console.WriteLine("Even:" + (item));
+            }
+            else
+            {
+                Console.WriteLine("odd:" + (item));
+
+            }
+        }
+    }
+}
+
+---------------------------------------------------------------------------------------------------------------------------
+
+int[] arr1 = new int[3];
+int[] Counter = new int[3];
+
+ int counter;
+//input values
+Console.WriteLine("Input elements");
+for (int i = 0; i < arr1.Length; i++)
+{
+arr1[i] = Convert.ToInt32(Console.ReadLine());
+Counter[i] = -1;
+}
+
+
+
+ for (int i = 0; i < arr1.Length; i++)
+{
+counter = 1;
+for (int j = i+1; j < arr1.Length; j++)
+{
+if(arr1[i]== arr1[j])
+{
+counter++;
+Counter[j] = 0;
+}
+}
+if (Counter[i] != 0)
+{
+Counter[i] = counter;
+}
+}
+
+
+ for (int i = 0; i < arr1.Length; i++)
+{
+if(Counter[i]!=0)
+{
+Console.WriteLine("{0} occurs {1}",arr1[i],Counter[i]);
+}
+}
+Console.ReadLine();
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
