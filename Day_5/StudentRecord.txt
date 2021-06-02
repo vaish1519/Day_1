@@ -1,0 +1,46 @@
+using System;
+ //shilpa-day4
+public class student
+{
+
+	public static void Main()
+	{
+		string[] sname = new string[10000];
+		int[] smarks = new int[10000];
+		int[] rollno = new int[10000];
+		int p;
+		char g;
+		for(int i=0;i<5;i++)
+		{
+			Console.WriteLine("enter name of student "+(i+1));
+			sname[i]=Console.ReadLine();
+			Console.WriteLine("enter total marks of student"+(i+1)+" out of 500");
+			smarks[i]=Convert.ToInt32(Console.ReadLine());
+			Console.WriteLine("enter roll no of student "+(i+1));
+			rollno[i]=Convert.ToInt32(Console.ReadLine());
+			
+		}
+			Console.Write("S.No\tRollNo\tName\t\tPercentage\t\tGrades");
+		Console.WriteLine();
+		for(int i=0;i<5;i++)
+		{
+			p=(smarks[i]*100)/500;
+			if(p>=90 &&p<=100)
+				g='A';
+			else if(p>=80&&p<=89)
+				g='B';
+			else if(p>=65&&p<=79)
+				g='C';
+			else if(p>=55&&p<=64)
+				g='D';
+			else if(p>=33&&p<=54)
+				g='E';
+			else
+				g='F';
+			Console.Write((i+1)+"\t\t\t\t"+rollno[i]+"\t\t\t\t"+sname[i]+"\t\t\t\t\t"+p+"\t\t\t"+g);
+		Console.WriteLine();	
+		}
+
+		
+	}	
+		}

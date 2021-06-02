@@ -1,0 +1,23 @@
+using System;
+
+namespace Day5
+{
+	public struct Person
+	{
+		public string Name;
+		public int Age;
+		public int Weight;
+	}	
+	public class Program
+	{
+		public static void Main(string[] args)
+		{
+			Person P1;
+			P1.Name = "Sharvari Lad";
+			P1.Age = 22;
+			P1.Weight = 48;
+			Console.WriteLine("Name : "+P1.Name+ " Age : "+P1.Age+ " Weight : "+P1.Weight);
+			Console.ReadLine();
+		}
+	}
+}

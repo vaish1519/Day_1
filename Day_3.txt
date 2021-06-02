@@ -1,0 +1,424 @@
+using System;
+    public class Student
+	{
+	     public int RollNo;
+		public string StudentName;
+	}
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            Student student=new Student();  //object creation
+			Console.WriteLine("Please enter Student Roll No");
+			student.RollNo=Convert.ToInt32(Console.ReadLine());
+			
+			Console.WriteLine("Please enter Student Name");
+			student.StudentName=Console.ReadLine();
+			
+			Console.WriteLine("Student Details are: ");
+			Console.WriteLine("Student Roll No : " + student.RollNo);
+			Console.WriteLine("Student Name : " + student.StudentName);
+			Console.ReadLine();
+		}
+    }
+
+------------------------------------------------------------------------------------------------------------------------------
+
+using System;
+    public class Student
+	{
+	     public int RollNo;
+		public string StudentName;
+		
+		public Student()
+		{
+		    Console.WriteLine("This is default constructor");	
+		}
+	}
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            Student student=new Student();  //object creation
+			Console.WriteLine("Please enter Student Roll No");
+			student.RollNo=Convert.ToInt32(Console.ReadLine());
+			
+			Console.WriteLine("Please enter Student Name");
+			student.StudentName=Console.ReadLine();
+			
+			Console.WriteLine("Student Details are: ");
+			Console.WriteLine("Student Roll No : " + student.RollNo);
+			Console.WriteLine("Student Name : " + student.StudentName);
+			Console.ReadLine();
+		}
+    }
+
+------------------------------------------------------------------------------------------------------------------------------
+
+using System;
+    public class Student
+	{
+	     public int RollNo;
+		public string StudentName;
+		
+		public Student(int RollNo,string StudentName) //parametarised constructor
+		{
+		    this.RollNo=RollNo;
+			this.StudentName=StudentName;
+			Console.WriteLine("Student Details are: ");
+			Console.WriteLine("Student Roll No : " + RollNo);
+			Console.WriteLine("Student Name : " + StudentName);
+		}	
+	}
+
+
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            Student student=new Student(25,"Vaish");  //object creation
+			
+			Console.ReadLine();
+			
+		}
+    }
+
+
+------------------------------------------------------------------------------------------------------------------------------
+using System;
+    public class Student
+	{
+	     public int RollNo;
+		public string StudentName;
+		
+		/*public Student(int RollNo,string StudentName)
+		{
+		    this.RollNo=RollNo;
+			this.StudentName=StudentName;
+		}*/
+		public void GetEmployeeData()
+		{
+			Console.WriteLine("Please enter Student Roll No");
+			RollNo=Convert.ToInt32(Console.ReadLine());
+			
+			Console.WriteLine("Please enter Student Name");
+			StudentName=Console.ReadLine();
+		}
+		
+		public void PrintEmployeeDetails()
+		{
+		Console.WriteLine("Student Details are: ");
+			Console.WriteLine("Student Roll No : " + RollNo);
+			Console.WriteLine("Student Name : " + StudentName);	
+		}
+	}
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            Student student=new Student();  //object creation
+			student.GetEmployeeData();
+			student.PrintEmployeeDetails();
+			Console.ReadLine();
+			
+		}
+    }
+
+------------------------------------------------------------------------------------------------------------------------------
+
+using System;
+    public class Student
+	{
+	     public int RollNo;
+		public string StudentName;
+		
+		public Student(Student stu) //Declaring copy constructor
+		{
+			RollNo=stu.RollNo;
+			StudentName=stu.StudentName;
+		}
+		
+		public Student(int RollNo,string StudentName) //parametarised constructor
+		{
+		    this.RollNo=RollNo;
+			this.StudentName=StudentName;	
+		}	
+		
+		public void PrintStudentDetails()
+		{
+			Console.WriteLine("Student Details are: ");
+			Console.WriteLine("Student Roll No : " + RollNo);
+			Console.WriteLine("Student Name : " + StudentName);
+		}
+	}
+
+
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            Student stu1=new Student(25,"Vaish");  //object creation
+			Student stu2=new Student(stu1);
+			stu2.PrintStudentDetails();
+			Console.ReadLine();
+			
+		}
+    }
+
+------------------------------------------------------------------------------------------------------------------------------
+
+using System;
+
+namespace ConsoleApp1
+{
+    public class Animal
+    {
+        public void eat()
+        {
+            Console.WriteLine("Dog can eat");
+        }
+    }
+    public class Dog: Animal
+    {
+        public void bark()
+        {
+            Console.WriteLine("Dog can Bark");
+        }
+        static void Main(string[] args)
+        {
+            Dog d = new Dog();
+            d.eat();
+            d.bark();
+            Console.ReadLine();
+        }
+    }
+}
+
+------------------------------------------------------------------------------------------------------------------------------
+
+using System;
+
+public class Shape
+{ 
+	public int length,width,side;
+	public void Parameters()
+	{
+	     Console.WriteLine("Enter Length: ");	
+	  length=Convert.ToInt32(Console.ReadLine());
+		 Console.WriteLine("Enter Width: ");	
+	  width=Convert.ToInt32(Console.ReadLine());
+		 Console.WriteLine("Enter side: ");	
+	  side=Convert.ToInt32(Console.ReadLine());
+	}
+}
+public class Rectangle:Shape
+{
+	 public void Area()
+	 {
+	    int area=length*width;
+	    Console.WriteLine("Area of rectangle is: " + area);	
+	  }
+
+}
+public class Square:Rectangle
+{
+      public void Area1()
+	 {
+	    int area1=side*side;
+	    Console.WriteLine("Area of rectangle is: " + area1);	
+	  }
+}
+public class Program
+{
+		public static void Main()
+	{
+		Square sq=new Square();
+		sq.Parameters();
+        sq.Area();
+		sq.Area1();	
+
+	}
+}
+
+Output:
+
+Enter Length: 
+2
+Enter Width: 
+3
+Enter side: 
+2
+Area of rectangle is: 6
+Area of rectangle is: 4
+------------------------------------------------------------------------------------------------------------------------------
+
+using System;
+
+public abstract class wholeseller
+{
+  public abstract void Discount();
+}
+public class retailer : wholeseller
+{
+int price=0;
+ public void Price()
+  {
+    Console.WriteLine("enter price");
+	price=Convert.ToInt32(Console.ReadLine());
+	  
+  }
+  public override void Discount()
+  {
+  Console.WriteLine("enter discount");
+	int discount=Convert.ToInt32(Console.ReadLine());
+	int amt=price-discount;
+	Console.WriteLine("Discounted amount is "+amt);
+    
+  }
+}
+
+public class Program
+{
+public   static void Main(string[] args)
+  {
+    retailer r1 = new retailer(); 
+    r1.Price(); 
+    r1.Discount(); 	
+  }
+}
+
+------------------------------------------------------------------------------------------------------------------------------
+
+Create a new C # project with three classes plus another class to test the logic in your code. The main classes of the program are the following classes:
+Person
+Student
+Professor
+The Student and Teacher classes inherit from the Person class.
+The Student class will include a public Study() method that will write I'm studying on the screen.
+The Person class must have two public methods Greet() and SetAge(int age) that will assign the age of the person.
+The Teacher class will include a public Explain() method that will write I'm explaining on the screen.
+Also create a public method ShowAge() in the Student class that writes My age is: x years old on the screen.
+You must create another test class called StudentProfessorTest with a Main method to do the following:
+Create a new Person and make him say hello
+Create a new Student, set an age, say hello, and display her age on the screen.
+Create a new Teacher, set an age, say hello and start the explanation.
+
+using System;
+
+public class Person{
+	protected int age;
+public void Greet()
+{
+	Console.WriteLine("Hello");
+}
+	public void SetAge(int age)
+{
+	Console.WriteLine("Enter Age");
+		this.age=Convert.ToInt32(Console.ReadLine());
+}
+}
+
+public class Student:Person
+{
+public void study()
+{
+Console.WriteLine("I'm studying");
+}	
+public void ShowAge()
+{
+Console.WriteLine("My age is:" + age);
+}
+}
+
+public class Professor:Person
+{
+public void Explain()
+{
+Console.WriteLine("I'm explaining");
+}
+}
+public class StudentAndTeacherTest
+{
+	public static void Main()
+	{
+		Person p1=new Person();
+		p1.Greet();
+		Student s1=new Student();
+		s1.SetAge(21);
+		s1.Greet();
+		s1.ShowAge();
+		s1.study();
+		Professor prof=new Professor();
+		prof.SetAge(30);
+		prof.Greet();
+		prof.Explain();
+	}
+}
+
+Output:
+Hello
+Enter Age
+25
+Hello
+My age is:25
+I'm studying
+Enter Age
+40
+Hello
+I'm explaining
+
+------------------------------------------------------------------------------------------------------------------------------
+
+Create a C# program to manage a photo book using object-oriented programming.
+To start, create a class called PhotoBook with a private attribute numPages of type int. It must also have a public method GetNumberPages that will return the number of photo book pages.
+The default constructor will create an album with 16 pages. There will be an additional constructor, with which we can specify the number of pages we want in the album.
+There is also a BigPhotoBook class whose constructor will create an album with 64 pages.
+Finally create a PhotoBookTest class to perform the following actions:
+Create a default photo book and show the number of pages
+Create a photo book with 24 pages and show the number of pages
+Create a large photo book and show the number of pages
+
+public class PhotoBookTest
+{
+    public static void Main()
+    {
+        PhotoBook myAlbum1 = new PhotoBook();
+        Console.WriteLine(myAlbum1.GetNumberPages());
+
+        PhotoBook myAlbum2 = new PhotoBook(24);
+        Console.WriteLine(myAlbum2.GetNumberPages());
+
+        SuperPhotoBook myBigPhotoAlbum1 = new SuperPhotoBook();
+        Console.WriteLine(myBigPhotoAlbum1.GetNumberPages());
+    }
+}
+
+public class PhotoBook
+{
+    protected int numPages;
+
+    public PhotoBook()
+    {
+        numPages = 16;
+    }
+
+    public PhotoBook(int numPages)
+    {
+        this.numPages = numPages;
+    }
+
+    public int GetNumberPages()
+    {
+        return numPages;
+    }
+}
+
+public class SuperPhotoBook : PhotoBook
+{
+    public SuperPhotoBook()
+    {
+        numPages = 64;
+    }
+}
+ 
+-----------------------------------------------------------------------------------------------------------------------------

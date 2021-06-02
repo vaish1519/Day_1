@@ -1,0 +1,23 @@
+using System;
+
+namespace Day5
+{
+	public class Class1
+	{
+		//Normal 0
+		//Excellent 1
+		//Default 0
+		//Good 3
+		public enum DayofWeek
+		{
+			Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
+		}
+		public static void Main()
+		{
+			Console.WriteLine("Day of Week {0} {1}",Convert.ToInt32(DayofWeek.Sunday),DayofWeek.Sunday);
+			Console.WriteLine("Day of Week {0} {1}",(int)DayofWeek.Monday,DayofWeek.Monday);
+			Console.WriteLine("Day of Week {0} {1}",(int)DayofWeek.Tuesday,DayofWeek.Tuesday);
+			Console.ReadLine();
+		}
+	}
+}

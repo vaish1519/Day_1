@@ -1,0 +1,23 @@
+using System;
+
+namespace Day5
+{
+	public struct Student
+	{
+		public string Name;
+		public int RollNo;
+		public int Marks;
+	}	
+	public class Program
+	{
+		public static void Main(string[] args)
+		{
+			Student S1;
+			S1.Name = "Sharvari Lad";
+			S1.RollNo = 22;
+			S1.Marks = 81;
+			Console.WriteLine("Name : "+S1.Name+ " Roll no. : "+S1.RollNo+ " Marks : "+S1.Marks);
+			Console.ReadLine();
+		}
+	}
+}

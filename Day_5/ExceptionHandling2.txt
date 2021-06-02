@@ -1,0 +1,39 @@
+using System;
+public class MyException : Exception
+    {
+        public MyException(string message):base(message)
+        {
+
+        }
+    }
+    public class Fitness
+    {
+        int points = 0;
+        public void ShowResult()
+        {
+            if(points < 110)
+            {
+                throw new MyException("Player failed the fitness test!");
+            }
+            else
+            {
+                throw new MyException("Player passed the fitness test!");
+            }
+        }
+    }
+    public class Class6
+    {
+        public static void Main()
+        {
+            Fitness f = new Fitness();
+            try
+            {
+                f.ShowResult();
+            }
+            catch(MyException e)
+            {
+            Console.WriteLine("User defined exceptions: {0}", e.Message);
+            }
+            Console.ReadLine();
+        }
+    }
